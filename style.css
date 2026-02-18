@@ -12,6 +12,8 @@ body{
 :root{
     --primary-blue:#0052CC;
 }
+
+/* utilities */
 .icon{
     font-size:1.4rem;
 }
@@ -35,6 +37,15 @@ body{
 a{
     text-decoration: none;
 }
+.input
+{
+    padding:0.2rem 1rem;
+    border:1px solid grey;
+    border-radius:2px;
+}
+
+
+/* container */
 .container
 {
     /* background-color: red; */
@@ -45,6 +56,8 @@ a{
     grid-template-columns: 1fr 5fr;
 }
 
+
+/* header style */
 .header
 {
     /* grid-row-start: 1; */
@@ -68,6 +81,12 @@ a{
     height:100%;
     width: 100%;
 }
+.nav {
+    display: flex;
+    gap:10px;
+    margin-left:1.5rem;
+   
+}
 .nav a {
     color:var(--primary-blue);
     text-decoration: none;
@@ -75,52 +94,30 @@ a{
     font-size: 16px;
 }
 .nav a:hover{
-    color:black;
-    border-bottom: 10x solid var(--primary-blue);
+    border-bottom: 2px solid var(--primary-blue);
     cursor: pointer;
     
 }
 
-.nav {
-    display: flex;
-    gap:10px;
-    margin-left:1.5rem;
-   
-}
-.icon_container
-{
-    height: 1.2rem;
-    width: 1.2rem;
-}
-.input
-{
-    padding:0.2rem 1rem;
-    border:1px solid grey;
-    border-radius:2px;
-}
+
+
+/* left side bar container */
 aside
 {   
-    /* display: flex; */
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    /* margin-top:5rem; */
     padding:1.5rem 1.5rem;
-    grid-row: auto;
-
 }
 .sidebarProfile
 {
-    display: block;
+    display:    ;
     height:2rem;
     width:2rem;
 }
 .sidebarTop {
     display: flex;
     gap:0.6rem;
-
-}
-.sidebarTop div p{
-    margin:0;
 }
 .sidebarTop div p:first-child{
     font-size: 15px;
@@ -314,15 +311,23 @@ aside
  .mainMid{
     margin-top: 2rem;
     display: grid;
-    /* height:80%; */
+    height:80%;
     grid-template-columns:1fr 1fr 1fr 1fr;;
  }
  .mainMidTopic{
-margin-right:.7rem;
-    padding:1rem .5rem;
+    margin-right:.7rem;
+    padding:1rem 0.5rem;
     background-color:rgb(247,248,249);
     border-radius: .7rem ;
+    overflow-y: auto;
+    scrollbar-width: none;
+    
+ }
+.scrollable{
+    height: 100%;
+
 }
+
  .mainMidTopic h2{
     color: #6D7B93;
     margin-bottom:1rem;
@@ -407,8 +412,8 @@ margin-right:.7rem;
 }
 
 
-/* media queries for mobile*/
-@media screen and (max-width:450px)
+/* media queries for tablet*/
+@media screen and (max-width:768px)
 {
     /* header styles */
     .icon-hidden{
@@ -428,8 +433,11 @@ margin-right:.7rem;
     .box3{
         padding:2rem 1.5rem;
     }
-    .mainFilterSearch, .mainFilterGroup{
+    .mainFilterSearch{
         justify-content: space-between;
+    }
+     .mainFilterGroup{
+        justify-content: space-evenly   ;
     }
     .container{
         grid-template-columns: 1fr;
@@ -459,14 +467,10 @@ margin-right:.7rem;
     }
 }
 
-/* media queries for tablet */
-@media screen and (max-width:780px) and (min-width:470px)
+/* media queries for mobile */
+@media (max-width:450px)
 {
- .container
-    {
-        /* background-color: #1F845A; */
-        /* grid-template-columns: 1fr;
-        grid-template-rows: auto; */
-        grid-template-columns: 2fr 10fr;
+    .mainFilterGroup{
+        justify-content: space-between;
     }
 }
